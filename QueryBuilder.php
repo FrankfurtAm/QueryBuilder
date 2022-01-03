@@ -45,13 +45,23 @@ class QueryBuilder
         return $statement->execute(array_values($data));
     }
     
+    /**
+        Parameters: 
+            string - $table (Table in Database)
+
+        Description: Gets the last identifier in the table
+
+        Return value: int(Id)
+    **/
+
     public function getLastId(string $table)
     {
         $sql = "SELECT MAX(id) FROM {$table}";
 
         $statement = $this->pdo->prepare($sql);
-        return $statement->fetch(PDO::FETCH_NUM)[0];
+        return (int)$statement->fetch(PDO::FETCH_NUM)[0];
     }
+
 
     public function update(string $table, array $data, array $condition)
     {
@@ -64,6 +74,16 @@ class QueryBuilder
         return $statement->execute(array_merge(array_values($data), array_values($condition))); 
     }
 
+    /**
+        Parameters: 
+            string - $table (Table in Database)
+            array - $conditions(Сonditions under which data is deleted)
+
+        Description: Delete data
+
+        Return value: bool
+    **/
+
     public function delete(string $table, array $conditions)
     {
         $fields = implode('=? ', array_keys($conditions)).'=? ';
@@ -71,6 +91,6 @@ class QueryBuilder
         $sql = "DELETE FROM {$table} WHERE {$fields}";
 
         $statement = $this->pdo->prepare($sql);
-        return $statement->execute(array_values($conditions)); 
+        return (bool)$statement->execute(array_values($conditions)); 
     }
 }
