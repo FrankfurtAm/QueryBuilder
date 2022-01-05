@@ -11,6 +11,27 @@ class QueryBuilder
     /**
         Parameters: 
             string - $table (Table in Database)
+            array - $data(Data to be added to the table) 'table' => 'data'
+
+        Description: Adding data to a table
+
+        Return value: bool
+    **/
+
+    public function insert(string $table, array $data)
+    {
+        $fields = implode(', ', array_keys($data));
+        $values = mb_substr(str_repeat('?,', count($data)), 0, -1);
+
+        $sql = "INSERT INTO {$table} ({$fields}) VALUES ({$values})";
+
+        $statement = $this->pdo->prepare($sql);
+        return (bool)$statement->execute(array_values($data));
+    }
+
+    /**
+        Parameters: 
+            string - $table (Table in Database)
 
         Description: Gets all records in a table
 
@@ -53,27 +74,7 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    /**
-        Parameters: 
-            string - $table (Table in Database)
-            array - $data(Data to be added to the table) 'table' => 'data'
-
-        Description: Adding data to a table
-
-        Return value: bool
-    **/
-
-    public function insert(string $table, array $data)
-    {
-        $fields = implode(', ', array_keys($data));
-        $values = mb_substr(str_repeat('?,', count($data)), 0, -1);
-
-        $sql = "INSERT INTO {$table} ({$fields}) VALUES ({$values})";
-
-        $statement = $this->pdo->prepare($sql);
-        return (bool)$statement->execute(array_values($data));
-    }
-    
+       
     /**
         Parameters: 
             string - $table (Table in Database)
