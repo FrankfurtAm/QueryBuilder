@@ -3,26 +3,32 @@
 QueryBuilder - a simple tool written in php to simplify the work with the database. It helps to create, read, update, delete data in the database and so on.
 
 # Usage
+The tool requires a pdo object
+```php
+require 'QueryBuilder.php'
 
-### Insert
+$pdo = new Pdo()
+```
+
+### insert
 
 ```php
 echo 'hello world';
 ```
 
-### GetAll
+### getAll
 
 ```php
 echo 'hello world';
 ```
 
-### FindOne
+### findOne
 
 ```php
 echo 'hello world';
 ```
 
-### GetLastId
+### getLastId
 
 ```php
 echo 'hello world';
