@@ -5,15 +5,24 @@ QueryBuilder - a simple tool written in php to simplify the work with the databa
 # Usage
 The tool requires a pdo object
 ```php
-require 'QueryBuilder.php'
+require 'QueryBuilder.php';
 
-$pdo = new Pdo()
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+
+$queryBuilder = new QueryBuilder($pdo);
 ```
 
 ### insert
 
 ```php
-echo 'hello world';
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+
+$queryBuilder = new QueryBuilder($pdo);
+$queryBuilder->insert('table', [
+    '' => '',
+]);
 ```
 
 ### getAll
