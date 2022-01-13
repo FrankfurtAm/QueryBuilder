@@ -69,6 +69,19 @@ $lastId = $queryBuilder->getLastId('students');
 ```
 
 ### Update
+The update method helps to update the data in the table. To use it, you need: the name of the table, the data you want to update, the conditions under which the data will be updated
+
+```php
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $login, $password);
+$queryBuilder = new QueryBuilder($pdo);
+
+$queryBuilder->update('students', ['age' => '19'], [
+    'id' => 0,
+    'name' => 'John',
+]);
+```
 
 ### Delete
 The delete method allows you to delete records in the table according to the conditions that you need
@@ -82,4 +95,5 @@ $queryBuilder = new QueryBuilder($pdo);
 $queryBuilder->delete('students', [
     'id' => 0,
     'name' => 'John',
-]); 
+]);
+```
