@@ -104,3 +104,31 @@ $queryBuilder->delete('students', [
 ]);
 ```
 <br>
+
+
+# Documentation
+
+### Method Display
+
+Method display message in page
+
+```php
+$flash->get(string $page): null
+```
+
+***Page***
+
+The page where you want to receive a flash message
+
+-------
+### Method Display
+
+Method display message in page
+
+```php
+$flash->get(string $page): null
+```
+
+***Page***
+
+The page where you want to receive a flash message
