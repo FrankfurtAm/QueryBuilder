@@ -119,6 +119,7 @@ $flash->get(string $page): null
 ***Page***
 
 The page where you want to receive a flash message
+
 <br>
 
 -------
