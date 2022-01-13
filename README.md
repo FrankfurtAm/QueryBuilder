@@ -20,21 +20,36 @@ require 'QueryBuilder.php';
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
 
 $queryBuilder = new QueryBuilder($pdo);
-$queryBuilder->insert('table', [
-    '' => '',
+$queryBuilder->insert('students', [
+    'id' => 0,
+    'name' => 'John',
+    'age' => 18,
 ]);
 ```
 
 ### getAll
 
 ```php
-echo 'hello world';
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+
+$queryBuilder = new QueryBuilder($pdo);
+$students = $queryBuilder->getAll('students');
 ```
 
 ### findOne
 
 ```php
-echo 'hello world';
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+
+$queryBuilder = new QueryBuilder($pdo);
+$student = $queryBuilder->findOne('students', [
+    'id' => 0,
+    'name' => 'Mike'
+]);// WHERE id = 0 AND name = 'Mike'
 ```
 
 ### getLastId
