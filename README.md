@@ -28,8 +28,8 @@ $queryBuilder->insert('students', [
     'age' => 18,
 ]);
 ```  
-\n  
-<br>  
+<br>
+
 ### GetAll
 The getAll method displays all the data in the table
 
@@ -41,9 +41,8 @@ $queryBuilder = new QueryBuilder($pdo);
 
 $students = $queryBuilder->getAll('students');
 ```
-  
-  
-  
+<br>
+
 ### FindOne
 The findAll method allows you to get only one specific record in the table, thanks to the conditions you need
 
@@ -58,8 +57,7 @@ $student = $queryBuilder->findOne('students', [
     'name' => 'Mike'
 ]); // WHERE id = 1 AND name = 'Mike'
 ```
-
-
+<br>
 
 ### GetLastId
 The getLastId method returns the last ID in the table
@@ -72,8 +70,7 @@ $queryBuilder = new QueryBuilder($pdo);
 
 $lastId = $queryBuilder->getLastId('students');
 ```
-
-
+<br>
 
 ### Update
 The update method helps to update the data in the table. To use it, you need: the name of the table, the data you want to update, the conditions under which the data will be updated
@@ -89,8 +86,7 @@ $queryBuilder->update('students', ['age' => '19'], [
     'name' => 'John',
 ]);
 ```
-
-
+<br>
 
 ### Delete
 The delete method allows you to delete records in the table according to the conditions that you need
@@ -106,4 +102,4 @@ $queryBuilder->delete('students', [
     'name' => 'John',
 ]);
 ```
-
+<br>
