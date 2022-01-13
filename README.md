@@ -28,8 +28,8 @@ $queryBuilder->insert('students', [
     'age' => 18,
 ]);
 ```  
-  
-  
+\n  
+<br>  
 ### GetAll
 The getAll method displays all the data in the table
 
