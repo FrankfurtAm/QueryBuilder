@@ -28,9 +28,9 @@ $queryBuilder->insert('students', [
     'age' => 18,
 ]);
 ```
-
-
-
+  
+  
+  
 ### GetAll
 The getAll method displays all the data in the table
 
@@ -42,9 +42,9 @@ $queryBuilder = new QueryBuilder($pdo);
 
 $students = $queryBuilder->getAll('students');
 ```
-
-
-
+  
+  
+  
 ### FindOne
 The findAll method allows you to get only one specific record in the table, thanks to the conditions you need
 
