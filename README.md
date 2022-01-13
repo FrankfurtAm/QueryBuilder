@@ -27,8 +27,7 @@ $queryBuilder->insert('students', [
     'name' => 'John',
     'age' => 18,
 ]);
-```
-  
+```  
   
   
 ### GetAll
