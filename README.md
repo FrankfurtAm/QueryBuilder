@@ -8,7 +8,7 @@ The tool requires a pdo object
 ```php
 require 'QueryBuilder.php';
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
 
 $queryBuilder = new QueryBuilder($pdo);
 ```
@@ -19,7 +19,7 @@ The insert method adds data to the table. The first parameter is the table you w
 ```php
 require 'QueryBuilder.php';
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
 $queryBuilder = new QueryBuilder($pdo);
 
 $queryBuilder->insert('students', [
@@ -35,7 +35,7 @@ The getAll method displays all the data in the table
 ```php
 require 'QueryBuilder.php';
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
 $queryBuilder = new QueryBuilder($pdo);
 
 $students = $queryBuilder->getAll('students');
@@ -47,22 +47,39 @@ The findAll method allows you to get only one specific record in the table, than
 ```php
 require 'QueryBuilder.php';
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
 $queryBuilder = new QueryBuilder($pdo);
 
 $student = $queryBuilder->findOne('students', [
-    'id' => 0,
+    'id' => 1,
     'name' => 'Mike'
-]); // WHERE id = 0 AND name = 'Mike'
+]); // WHERE id = 1 AND name = 'Mike'
 ```
 
 ### GetLastId
 The getLastId method returns the last ID in the table
 
 ```php
-echo 'hello world';
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
+$queryBuilder = new QueryBuilder($pdo);
+
+$lastId = $queryBuilder->getLastId('students');
 ```
 
 ### Update
 
 ### Delete
+The delete method allows you to delete records in the table according to the conditions that you need
+
+```php
+require 'QueryBuilder.php';
+
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $user, $pass);
+$queryBuilder = new QueryBuilder($pdo);
+
+$queryBuilder->delete('students', [
+    'id' => 0,
+    'name' => 'John',
+]); 
