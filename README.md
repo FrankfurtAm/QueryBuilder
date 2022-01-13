@@ -12,6 +12,7 @@ $pdo = new PDO('mysql:host=127.0.0.1;dbname=university', $login, $password);
 
 $queryBuilder = new QueryBuilder($pdo);
 ```
+<br>
 
 ### Insert
 The insert method adds data to the table. The first parameter is the table you want to add data to. The second parameter is the array of data you want to add to the table.
