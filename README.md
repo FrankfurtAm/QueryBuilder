@@ -4,6 +4,7 @@ QueryBuilder - a simple tool written in php to simplify the work with the databa
 
 # Usage
 The tool requires a pdo object
+
 ```php
 require 'QueryBuilder.php';
 
@@ -13,12 +14,12 @@ $queryBuilder = new QueryBuilder($pdo);
 ```
 
 ### Insert
+The insert method adds data to the table. The first parameter is the table you want to add data to. The second parameter is the array of data you want to add to the table.
 
 ```php
 require 'QueryBuilder.php';
 
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
-
 $queryBuilder = new QueryBuilder($pdo);
 
 $queryBuilder->insert('students', [
@@ -29,34 +30,39 @@ $queryBuilder->insert('students', [
 ```
 
 ### GetAll
+The getAll method displays all the data in the table
 
 ```php
 require 'QueryBuilder.php';
 
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
-
 $queryBuilder = new QueryBuilder($pdo);
 
 $students = $queryBuilder->getAll('students');
 ```
 
 ### FindOne
+The findAll method allows you to get only one specific record in the table, thanks to the conditions you need
 
 ```php
 require 'QueryBuilder.php';
 
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=test', $user, $pass);
-
 $queryBuilder = new QueryBuilder($pdo);
 
 $student = $queryBuilder->findOne('students', [
     'id' => 0,
     'name' => 'Mike'
-]);// WHERE id = 0 AND name = 'Mike'
+]); // WHERE id = 0 AND name = 'Mike'
 ```
 
 ### GetLastId
+The getLastId method returns the last ID in the table
 
 ```php
 echo 'hello world';
 ```
+
+### Update
+
+### Delete
