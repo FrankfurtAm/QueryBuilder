@@ -110,10 +110,10 @@ $queryBuilder->delete('students', [
 
 ### Method Insert
 
-Method display message in page
+The method adds data to the table
 
 ```php
-$flash->get(string $table, array $data): bool
+$queryBuilder->insert(string $table, array $data): bool
 ```
 
 ***Table***
@@ -136,20 +136,155 @@ Example:
 ```
 [
     'id' => 0,
-    'name' => 'John',
+    'name' => 'Rahim',
 ]
 ```
 <br>
 
--------
-### Method Display,
+### Method GetAll
 
-Method display message in page
+The method gets all records from the table as an array
 
 ```php
-$flash->get(string $page): null
+$queryBuilder->getAll(string $table): array
 ```
 
-***Page***
+***Table***
 
-The page where you want to receive a flash message
+Table for searching records
+
+<br>
+
+
+### Method findOne
+
+The method gets only one record in the table under certain conditions
+
+```php
+$queryBuilder->findOne(string $table, array $conditions): array
+```
+
+***Table***
+
+Table for searching records
+
+***Conditions***
+
+Array with search conditions
+
+```php
+[
+    $column => $data,
+    $column1 => $data1,
+]
+```
+
+Example:
+
+```
+[
+    'id' => 1,
+    'name' => 'Mike',
+] // WHERE `id` = 1 AND 'name' = 'Mike'
+```
+<br>
+
+### Method GetLastId
+
+Method returns last id
+
+```php
+$queryBuilder->getLastId(string $table): int
+```
+
+***Table***
+
+Table for searching id
+
+<br>
+
+### Method Update
+
+The method updates the already existing data in the table
+
+```php
+$queryBuilder->update(string $table, array $data, array $conditions): bool
+```
+
+***Table***
+
+Table for searching records
+
+***Data***
+
+Array to add data
+
+```php
+[
+    $column => $data,
+    $column1 => $data1,
+]
+```
+
+Example:
+
+```
+[
+    'age' => 18,
+]
+```
+<br>
+
+***Conditions***
+
+Array with search conditions
+
+```php
+[
+    $column => $data,
+    $column1 => $data1,
+]
+```
+
+Example:
+
+```
+[
+    'id' => 3,
+    'name' => 'Rose',
+] // WHERE `id` = 3 AND 'name' = 'Rose'
+```
+<br>
+
+### Method Delete
+
+Method for deleting entries
+
+```php
+$queryBuilder->delete(string $table, array $conditions): bool
+```
+
+***Table***
+
+Table to delete entries
+
+***Conditions***
+
+Conditions for deleting records
+
+```php
+[
+    $column => $data,
+    $column1 => $data1,
+]
+```
+
+Example:
+
+```
+[
+    'id' => 2,
+    'name' => 'Maxim',
+] // WHERE `id` = 2 AND 'name' = 'Maxim'
+```
+<br>
