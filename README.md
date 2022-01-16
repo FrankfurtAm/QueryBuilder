@@ -139,6 +139,7 @@ Example:
     'name' => 'Rahim',
 ]
 ```
+------
 <br>
 
 ### Method GetAll
@@ -153,6 +154,7 @@ $queryBuilder->getAll(string $table): array
 
 Table for searching records
 
+------
 <br>
 
 
@@ -187,6 +189,7 @@ Example:
     'name' => 'Mike',
 ] // WHERE `id` = 1 AND 'name' = 'Mike'
 ```
+------
 <br>
 
 ### Method GetLastId
@@ -201,6 +204,7 @@ $queryBuilder->getLastId(string $table): int
 
 Table for searching id
 
+------
 <br>
 
 ### Method Update
@@ -254,6 +258,7 @@ Example:
     'name' => 'Rose',
 ] // WHERE `id` = 3 AND 'name' = 'Rose'
 ```
+------
 <br>
 
 ### Method Delete
@@ -287,4 +292,5 @@ Example:
     'name' => 'Maxim',
 ] // WHERE `id` = 2 AND 'name' = 'Maxim'
 ```
+------
 <br>
