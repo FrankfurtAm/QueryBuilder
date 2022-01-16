@@ -108,22 +108,41 @@ $queryBuilder->delete('students', [
 
 # Documentation
 
-### Method Display
+### Method Insert
 
 Method display message in page
 
 ```php
-$flash->get(string $page): null
+$flash->get(string $table, array $data): bool
 ```
 
-***Page***
+***Table***
 
-The page where you want to receive a flash message
+The table you want to add data to
 
+***Data***
+
+An array with the data you want to add to the database
+
+```php
+[
+    $column => $data,
+    $column1 => $data1,
+]
+```
+
+Example:
+
+```
+[
+    'id' => 0,
+    'name' => 'John',
+]
+```
 <br>
 
 -------
-### Method Display
+### Method Display,
 
 Method display message in page
 
